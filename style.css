@@ -22,7 +22,6 @@ a {
 	text-decoration: none;
 	color: var(--very-light-gray);
 }
-
 body {
 	margin: 0;
 	padding: 0;
@@ -44,7 +43,7 @@ body {
 }
 
 nav {
-	background-color: var(--very-light-gray);
+	background-color: white;
 	padding-block: 1.5rem;
 	position: fixed;
 	top: 0;
@@ -104,6 +103,12 @@ nav > .container > img {
 	color: var(--very-light-gray);
 	padding: 0.5rem 1.5rem;
 	font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+	border: 2px solid var(--very-dark-violet);
+	color: var(--very-dark-violet);
+	background-color: var(--very-light-gray);
 }
 
 .btn-nav {
@@ -174,7 +179,6 @@ main {
 	grid-row: 2;
 	margin-block: 5rem;
 	position: relative;
-	padding-inline: 2rem;
 }
 
 .view-plans h1 {
@@ -221,7 +225,165 @@ main {
 	display: none;
 }
 
+#section2 {
+	padding-block: 5rem;
+	display: grid;
+	gap: 4rem;
+}
+
+#section2 h1::after {
+	position: absolute;
+	content: "";
+	width: 25%;
+	top: -2.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	border-top: 1px solid var(--dark-violet);
+}
+
+#section2 h1 {
+	color: var(--dark-violet);
+	font-family: "DM Serif Display", serif;
+	font-weight: 400;
+	font-size: 2.5rem;
+	position: relative;
+	text-align: center;
+	line-height: 1;
+}
+
+#section2 h2 {
+	font-family: "DM Serif Display", serif;
+	font-size: 1.65rem;
+	font-weight: 400;
+}
+
+#section2 p {
+	color: var(--dark-grayish-violet);
+}
+#section2 .differences {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 1rem;
+}
+
+#section2 .how-we-work {
+	background-color: var(--dark-violet);
+	color: var(--very-light-gray);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5rem 2rem;
+	background-image: url(./images/bg-pattern-how-we-work-mobile.svg);
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+#section2 .how-we-work h1 {
+	color: var(--very-light-gray);
+	margin-top: 0;
+}
+
+footer {
+	display: flex;
+	background-color: var(--very-light-gray);
+	padding-block: 2rem;
+}
+
+footer .logo {
+	background-image: url(./images/bg-pattern-footer-mobile.svg);
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 100%;
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+footer h3 {
+	color: var(--dark-grayish-violet);
+	font-weight: 700;
+	font-size: 1rem;
+	text-align: center;
+	line-height: 1.75;
+}
+
+footer ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	gap: 0.5rem;
+}
+
+footer li {
+	font-weight: 700;
+	font-size: 0.9rem;
+	letter-spacing: 0.125rem;
+	color: var(--dark-violet);
+}
+
+footer a {
+	color: var(--very-dark-violet);
+}
+footer a:hover {
+	text-decoration: underline;
+}
+
+.social-media-grid {
+	display: flex;
+	gap: 1rem;
+}
+
+.icon:hover {
+	fill: var(--dark-violet);
+	cursor: pointer;
+}
+
+.logo > img {
+	width: min-content;
+	height: min-content;
+}
+
 @media (min-width: 975px) {
+	footer .logo {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.footer-nav {
+		display: grid;
+		justify-items: start;
+		align-items: start;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	footer h3 {
+		text-align: start;
+	}
+	footer {
+		display: flex;
+		background-color: var(--very-light-gray);
+		padding-block: 2rem;
+		background-image: url(./images/bg-pattern-footer-desktop.svg);
+		background-repeat: no-repeat;
+		background-position: top left;
+	}
+
+	footer .logo {
+		background-image: url("");
+	}
+
+	footer li {
+		text-align: start;
+		align-self: flex-start;
+	}
 	.pattern-left-desktop {
 		position: absolute;
 		bottom: -60%;
@@ -292,5 +454,36 @@ main {
 		top: -2.5rem;
 		left: 0;
 		border-top: 1px solid var(--very-light-gray);
+	}
+	#section2 .differences {
+		flex-direction: row;
+		text-align: start;
+	}
+
+	#section2 {
+		padding-block: 20rem;
+	}
+
+	#section2 > h1 {
+		text-align: start;
+		font-size: 5rem;
+	}
+	#section2 h1::after {
+		left: 0;
+		transform: translateX(0%);
+	}
+
+	#section2 .how-we-work {
+		flex-direction: row;
+		justify-content: space-around;
+		background-image: url(./images/bg-pattern-how-we-work-desktop.svg);
+		background-repeat: no-repeat;
+		background-position: top right;
+		padding: 3rem;
+	}
+	#section2 .how-we-work h1 {
+		font-size: 3rem;
+		width: 50%;
+		text-align: start;
 	}
 }
