@@ -46,6 +46,10 @@ body {
 nav {
 	background-color: var(--very-light-gray);
 	padding-block: 1.5rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
 }
 
 nav > .container {
@@ -97,7 +101,7 @@ nav > .container > img {
 
 .btn-primary {
 	border: 2px solid var(--very-light-gray);
-	color: var(--very-dark-violet);
+	color: var(--very-light-gray);
 	padding: 0.5rem 1.5rem;
 	font-size: 0.9rem;
 }
@@ -142,7 +146,96 @@ nav > .container > img {
 	text-align: center;
 }
 
-@media (min-width: 786px) {
+main {
+	margin-top: 5rem;
+}
+#section1 > .container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	width: 100%;
+}
+
+#section1 > .container > img {
+	margin-inline: auto;
+}
+
+#section1 {
+	background-color: var(--dark-violet);
+	position: relative;
+}
+
+.view-plans {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	grid-row: 2;
+	margin-block: 5rem;
+	position: relative;
+	padding-inline: 2rem;
+}
+
+.view-plans h1 {
+	color: var(--very-light-gray);
+	font-family: "DM Serif Display", serif;
+	font-weight: 400;
+	font-size: 2.5rem;
+	position: relative;
+	text-align: center;
+	margin-bottom: 0;
+	line-height: 1;
+}
+
+.view-plans p {
+	color: hsla(0, 0%, 98%, 100%);
+	font-weight: 400;
+	font-size: 1rem;
+	text-align: center;
+	line-height: 1.75;
+}
+
+.view-plans .btn {
+	margin: 0 auto;
+}
+
+.pattern-left-mobile {
+	position: absolute;
+	top: -22%;
+	left: 0;
+	width: 40%;
+	overflow: visible;
+}
+
+.pattern-right-mobile {
+	position: absolute;
+	right: 0;
+	bottom: -70%;
+	width: 30%;
+}
+.pattern-left-desktop {
+	display: none;
+}
+.pattern-right-desktop {
+	display: none;
+}
+
+@media (min-width: 975px) {
+	.pattern-left-desktop {
+		position: absolute;
+		bottom: -60%;
+		width: 14%;
+		display: flex;
+	}
+
+	.pattern-right-desktop {
+		position: absolute;
+		right: 0;
+		top: -12%;
+		width: 30%;
+		display: flex;
+	}
 	.nav-desktop {
 		display: flex !important;
 	}
@@ -154,5 +247,50 @@ nav > .container > img {
 	}
 	.nav-mobile.active {
 		display: none;
+	}
+	.pattern-left-mobile {
+		display: none;
+	}
+	.pattern-right-mobile {
+		display: none;
+	}
+	#section1 > .container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		width: min(100% - 3rem, 69rem);
+	}
+	.view-plans {
+		grid-column: 1;
+		grid-row: 1;
+		padding-inline-end: 1rem;
+		align-items: flex-start;
+	}
+	.view-plans p {
+		text-align: start;
+	}
+
+	.view-plans h1 {
+		font-size: 4.25rem;
+		margin-right: 1.5rem;
+		text-align: start;
+	}
+
+	.view-plans .btn {
+		margin: 0;
+	}
+
+	#section1 > .container > img {
+		margin-top: 7rem;
+		margin-bottom: -10rem;
+		content: url(.//images/image-intro-desktop.jpg);
+	}
+	.view-plans h1::after {
+		position: absolute;
+		content: "";
+		width: 25%;
+		top: -2.5rem;
+		left: 0;
+		border-top: 1px solid var(--very-light-gray);
 	}
 }
