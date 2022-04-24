@@ -1,0 +1,158 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	--dark-violet: hsl(256, 26%, 20%);
+	--grayish-blue: hsl(216, 30%, 68%);
+	--very-dark-violet: hsl(270, 9%, 17%);
+	--dark-grayish-violet: hsl(273, 4%, 51%);
+	--very-light-gray: hsl(0, 0%, 98%);
+
+	font-size: 16px;
+	/* headings */
+	font-family: "DM Serif Display", serif;
+	/* paragraphs */
+	font-family: "Karla", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: var(--very-light-gray);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.container {
+	width: min(100% - 3rem, 69rem);
+	margin-inline: auto;
+}
+
+.nav-desktop {
+	display: none !important;
+}
+
+.nav-mobile {
+	display: none;
+}
+
+nav {
+	background-color: var(--very-light-gray);
+	padding-block: 1.5rem;
+}
+
+nav > .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav > .container > img {
+	width: min-content;
+	height: min-content;
+}
+
+.nav-desktop {
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+}
+
+.btn {
+	text-decoration: none;
+	letter-spacing: 0.125rem;
+	font-weight: 700;
+	padding: 0;
+}
+
+.btn-clear {
+	color: var(--dark-grayish-violet);
+	font-size: 0.8rem;
+	background: none;
+	border: none;
+}
+
+.btn-clear:hover {
+	color: var(--very-dark-violet);
+}
+
+.btn-secondary {
+	border: 2px solid var(--very-dark-violet);
+	color: var(--very-dark-violet);
+	padding: 0.5rem 1.5rem;
+	font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+	background-color: var(--very-dark-violet);
+	color: var(--very-light-gray);
+}
+
+.btn-primary {
+	border: 2px solid var(--very-light-gray);
+	color: var(--very-dark-violet);
+	padding: 0.5rem 1.5rem;
+	font-size: 0.9rem;
+}
+
+.btn-nav {
+	display: flex;
+	align-items: center;
+}
+
+.nav-mobile.active {
+	display: flex;
+}
+
+.menu-icon.active {
+	content: url(./images/icon-close.svg);
+}
+
+.nav-mobile {
+	position: absolute;
+	background-color: var(--very-dark-violet);
+	background-image: url(./images/bg-pattern-mobile-nav.svg);
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+	background-size: 100%;
+	content: "";
+	top: 5rem;
+	left: 0;
+	padding-inline: 1.5rem;
+	width: 100%;
+	height: calc(100% - 5rem);
+	flex-direction: column;
+	gap: 2rem;
+	justify-content: start;
+	align-items: center;
+	padding-top: 3rem;
+}
+
+.nav-mobile > a {
+	font-size: 1.25rem;
+	color: var(--very-light-gray);
+	width: 100%;
+	text-align: center;
+}
+
+@media (min-width: 786px) {
+	.nav-desktop {
+		display: flex !important;
+	}
+	.btn-nav {
+		display: none;
+	}
+	.nav-mobile {
+		display: none;
+	}
+	.nav-mobile.active {
+		display: none;
+	}
+}
